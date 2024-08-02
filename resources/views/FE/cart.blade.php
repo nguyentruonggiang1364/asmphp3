@@ -18,41 +18,22 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><i class="fa fa-times-circle"></i></td>
-                <td><img src="img/products/f1.jpg" alt="" /></td>
-                <td>Áo thun cá sấu nam</td>
-                <td>120.000 VNĐ</td>
-                <td><input type="number" value="1" /></td>
-                <td>120.000</td>
-            </tr>
-            <tr>
-                <td><i class="fa fa-times-circle"></i></td>
-                <td><img src="img/products/f2.jpg" alt="" /></td>
-                <td>Áo thun cá sấu nam</td>
-                <td>120.000 VNĐ</td>
-                <td><input type="number" value="1" /></td>
-                <td>120.000</td>
-            </tr>
-            <tr>
-                <td><i class="fa fa-times-circle"></i></td>
-                <td><img src="img/products/f3.jpg" alt="" /></td>
-                <td>Áo thun cá sấu nam</td>
-                <td>120.000 VNĐ</td>
-                <td><input type="number" value="1" /></td>
-                <td>120.000</td>
-            </tr>
-            <tr>
-                <td><i class="fa fa-times-circle"></i></td>
-                <td><img src="img/products/f4.jpg" alt="" /></td>
-                <td>Áo thun cá sấu nam</td>
-                <td>120.000 VNĐ</td>
-                <td><input type="number" value="1" /></td>
-                <td>120.000</td>
-            </tr>
+            @if(session()->has('cart'))
+                @foreach(session('cart') as $sanpham)
+                    <tr>
+                        <td><i class="fa fa-times-circle delete-item"></i></td>
+                        <td><img src="{{asset($sanpham['anh'])}}" alt="" /></td>
+                        <td>{{$sanpham['name']}}</td>
+                        <td>{{$sanpham['gia']}} VNĐ</td>
+                        <td><input type="number" value="{{$sanpham['soluong']}}" /></td>
+                        <td>{{$sanpham['gia'] * $sanpham['soluong']}}</td>
+                    </tr>
+                @endforeach
+            @endif
         </tbody>
     </table>
 </section>
+
 
 <section id="cart-add" class="section-p1">
     <div id="coupon">
@@ -60,7 +41,19 @@
         <div>
             <input type="text" placeholder="Nhập mã giảm giá" />
             <button class="normal">Áp dụng</button>
-        </div>
+        </div> <br> <br>
+        <form action="{{route('thanhcong')}}" method="POST">
+            @csrf
+            <div class="info">
+                <h3>Thông Tin</h3>
+                <input type="text" placeholder="Nhập Tên Người Dùng" name="user_id" />
+                <input type="text" placeholder="Nhập Tỉnh" name="tinh_id" />
+                <input type="text" placeholder="Nhập Huyện" name="huyen_id" />
+                <input type="text" placeholder="Nhập Xã" name="xa_id" />
+                <input type="text" placeholder="Nhập Địa Chỉ" name="diachi_id" />
+                <input type="text" placeholder="Nhập Ghi Chú" name="ghichu" />
+                <input type="hidden" name="trangthai" />
+            </div>
     </div>
 
     <div id="subtotal">
@@ -68,7 +61,7 @@
         <table>
             <tr>
                 <td>Tổng tiền:</td>
-                <td>499.000 VNĐ</td>
+                <td>{{ $tongtien }} VNĐ</td>
             </tr>
             <tr>
                 <td>Vận chuyển:</td>
@@ -76,12 +69,13 @@
             </tr>
             <tr>
                 <td><strong>Tiền thanh toán:</strong></td>
-                <td><strong>499.000 VNĐ</strong></td>
+                <td><strong>{{ $tongtien }} VNĐ</strong></td>
             </tr>
+            <input type="hidden" name="tongtien" value="{{$tongtien}}">
         </table>
-
-        <a href="{{route('thanh-cong')}}"> <button class="normal"> Tiến hành thanh toán </button></a>
+        <button type="submit" class="normal"> Tiến hành thanh toán </button>
     </div>
+    </form>
 </section>
 <section id="newsletter" class="section-p1 section-m1">
     <div class="newstext">

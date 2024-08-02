@@ -9,7 +9,7 @@
       <div class="col-12">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">{{ isset($danhmuc) ? 'Form Cập nhật Danh mục' : 'Form Thêm mới Danh mục' }}</h6>
+            <h6 class="m-0 font-weight-bold text-primary">{{ isset($danhmuc) ? 'Form Cập nhật Danh mục' : 'Form Thêm mục Danh mục' }}</h6>
           </div>
           <div class="card-body">
             <div class="form-group">
@@ -18,7 +18,7 @@
             </div>
           </div>
           <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">Lưu</button>
           </div>
         </div>
       </div>

@@ -33,29 +33,66 @@
                         </div>
                     </nav>
                 </div>
-                @if (auth()->user()->level == 'Admin')
-                <a class="nav-link" href={{ route('category') }}>
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                    Category
+                <div class="sb-sidenav-menu-heading">Chức Năng Chính</div>
+
+                <!-- danh muc -->
+
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDanhmuc" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Danh Mục
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                @endif
-                <a class="nav-link" href={{ route('products') }}>
-                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Product
+                <div class="collapse" id="collapseDanhmuc" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('danhmuc')}}">Tất Cả Danh Mục</a>
+                        <a class="nav-link" href="{{route('danhmuc.add')}}">Thêm Danh Mục</a>
+                    </nav>
+                </div>
+
+                <!-- thuong hieu -->
+
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseThuonghieu" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Thương Hiệu
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <a class="nav-link" href={{ route('users') }}>
-                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                    User
+                <div class="collapse" id="collapseThuonghieu" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('thuonghieu')}}">Tất Cả Thương Hiệu</a>
+                        <a class="nav-link" href="{{route('thuonghieu.add')}}">Thêm Thương Hiệu</a>
+                    </nav>
+                </div>
+
+                <!-- sanpham -->
+                 
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseSanpham" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Sản Phẩm
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <a class="nav-link" href={{ route('orders') }}>
-                    <div class="sb-nav-link-icon"><i class="fa fa-money"></i></div>
-                    Order
+
+                <div class="collapse" id="collapseSanpham" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('sanpham')}}">Tất Cả Sản Phẩm</a>
+                        <a class="nav-link" href="{{route('sanpham.add')}}">Thêm Sản Phẩm</a>
+                    </nav>
+                </div>
+                
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCupon" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Mã giảm giá
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
+                <div class="collapse" id="collapseCupon" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('cupon')}}">Tất Cả Mã giảm giá </a>
+                        <a class="nav-link" href="{{route('cupon.add')}}">Thêm mã giảm giá</a>
+                    </nav>
+                </div>
             </div>
-        </div>
-        <div class="sb-sidenav-footer">
-            <div class="small">Logged in as:</div>
-            Start Bootstrap
-        </div>
+            <div class="sb-sidenav-footer">
+                <div class="small">Logged in as:</div>
+                Start Bootstrap
+            </div>
     </nav>
 </div>

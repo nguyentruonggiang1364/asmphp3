@@ -8,287 +8,44 @@
 
 <!---- feature product section -------->
 <section id="product1" class="section-p1">
+    <div class="danhmuc">
+        <div class="title">Danh mục sản phẩm</div>
+        <ul>
+            @foreach($dmsps as $dmsp)
+            <li>
+                <a href="{{route('sanphamtheodanhmuc', $dmsp->slug)}}">{{mb_strtoupper($dmsp->name)}}</a>
+            </li>
+            @endforeach
+        </ul>
+    </div>
     <div class="pro-container">
-        <div class="pro" onclick="window.location.href='sproduct.html'">
-            <img src="./img/products/f1.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
+        @foreach($sanphams as $sanpham)
         <div class="pro">
-            <img src="./img/products/f2.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+            <a href="{{route('chitietsanpham',$sanpham->slug)}}">
+                <img src="{{ asset($sanpham->hinhanhs[0]->tenanh) }}" alt="" />
+                <div class="des">
+                    <span>{{ $sanpham->danhmuc_id }}</span>
+                    <h5>{{$sanpham->name}}</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>{{$sanpham->price}} VNĐ</h4>
                 </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+                <input type="hidden" class="soluong" value="1">
+                <a href="{{route('themVaoGiohang')}}" class="themvaogio" data-product-id="{{$sanpham->id}}"><i class="fa fa-shopping-cart cart"></i></a>
+            </a>
         </div>
-
-        <div class="pro">
-            <img src="./img/products/f3.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="./img/products/f4.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="./img/products/f5.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="./img/products/f6.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="./img/products/f7.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="./img/products/f8.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="./img/products/n1.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="./img/products/n2.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="./img/products/n3.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="./img/products/n4.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="./img/products/n5.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="./img/products/n6.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="./img/products/n7.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="./img/products/n8.jpg" alt="" />
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
+        @endforeach
     </div>
 </section>
 
 <!-- pagination  -->
 <section id="pagination" class="section-p1">
-    <a href="#">1</a>
-    <a href="#">2</a>
-    <a href="#">3</a>
-    <a href="#"><i class="fa fa-long-arrow-alt-right"></i></a>
+    <!-- {{$sanphams->links()}} -->
 </section>
 <!---- newletter section start -->
 
@@ -306,3 +63,17 @@
     </div>
 </section>
 @endsection
+
+@push('scripts')
+<script>
+    const all_themvaogios = document.querSelectorAll('.themvaogio');
+    all_themvaogios.foreach(bt => {
+        bt.addEventListener('click',(e)=>{
+            e.preventDefault();
+            e.stopPropagation();
+            console.log(bt.data.productId)
+        })
+    })
+</script>
+
+@endpush

@@ -41,145 +41,27 @@
 
 <!---- feature product section -------->
 <section id="product1" class="section-p1">
-    <h2>Featured Products</h2>
-    <p>Summer Collection New Mordern Design</p>
     <div class="pro-container">
-        
+        @foreach($sanphams as $sanpham)
         <div class="pro">
-            <img src="{{asset('img/products/f1.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+            <a href="{{route('chitietsanpham',$sanpham->slug)}}">
+                <img src="{{ asset($sanpham->hinhanhs[0]->tenanh) }}" alt="" />
+                <div class="des">
+                    <span>{{ $sanpham->danhmuc_id }}</span>
+                    <h5>{{$sanpham->name}}</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>{{$sanpham->price}} VNĐ</h4>
                 </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </a>
         </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/f2.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/f3.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/f4.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/f5.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/f6.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/f7.jpg')}} " alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/f8.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
+        @endforeach
     </div>
 </section>
 
@@ -192,144 +74,28 @@
 
 <!---- feature product section -------->
 <section id="product1" class="section-p1">
-    <h2>New Arrivals</h2>
-    <p>Summer Collection New Mordern Design</p>
+    
     <div class="pro-container">
+        @foreach($sanphams as $sanpham)
         <div class="pro">
-            <img src="{{asset('img/products/n1.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+            <a href="{{route('chitietsanpham',$sanpham->slug)}}">
+                <img src="{{ asset($sanpham->hinhanhs[0]->tenanh) }}" alt="" />
+                <div class="des">
+                    <span>{{ $sanpham->danhmuc_id }}</span>
+                    <h5>{{$sanpham->name}}</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>{{$sanpham->price}} VNĐ</h4>
                 </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </a>
         </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/n1.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/n1.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/n1.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/n1.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/n1.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/n1.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="{{asset('img/products/n1.jpg')}}" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Cartoon Astronaut T-Shirts</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$78</h4>
-            </div>
-            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-        </div>
+        @endforeach
     </div>
 </section>
 

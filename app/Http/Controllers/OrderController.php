@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
-
-use DataTables;
+use Yajra\DataTables\Facades\DataTables;
 
 class OrderController extends Controller
 {

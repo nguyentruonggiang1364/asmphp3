@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\products;
 use App\Models\category;
-use DataTables;
+
 
 class ProductController extends Controller
 {
