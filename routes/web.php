@@ -54,7 +54,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/cart', 'cart')->name('cart');
     Route::get('/add-to-cart', [GiohangController::class, 'themVaoGiohang' ])->name('themVaoGiohang');
     Route::get('/delete-to-cart', [GiohangController::class, 'xoaPhantu' ])->name('xoaPhantu');
-    Route::get('/thanks', 'datthanhcong')->name('datthanhcong');
+    Route::get('/thanks', 'thanks')->name('thanks');
     Route::post('/thanhcong', 'thanhcong')->name('thanhcong');
 });
 

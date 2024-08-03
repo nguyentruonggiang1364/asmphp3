@@ -17,7 +17,6 @@ class SanphamController extends Controller
     {
         if ($request->ajax()) {
             $products = Sanpham::latest()->get();
-
             $products = Sanpham::query()
                 ->join('danhmucs', 'danhmucs.id', '=', 'sanphams.danhmuc_id')
                 ->join('thuonghieus', 'thuonghieus.id', '=', 'sanphams.thuonghieu_id')
@@ -30,14 +29,11 @@ class SanphamController extends Controller
                     'thuonghieus.name as tname'
 
                 ]);
-
             return DataTables::of($products)
                 ->addIndexColumn()
                 ->addColumn('action', function ($product) {
-                    $btn = '
-                        <a href="' . route('sanpham.edit', $product->id) . '" 
-                        class="btn btn-info"><i class="fas fa-eye"></i></a>
-                        
+                    $btn = 
+                    '     
                         <a href="' . route('sanpham.edit', $product->id) . '" 
                         class="btn btn-warning"><i class="fas fa-pen"></i></a>
                         
@@ -48,13 +44,15 @@ class SanphamController extends Controller
                 })
                 ->rawColumns(['action'])
                 ->make(true);
+                
         }
-
+     
         return view('sanpham.index');
     }
 
     public function view($id)
     {
+
     }
 
     public function add()

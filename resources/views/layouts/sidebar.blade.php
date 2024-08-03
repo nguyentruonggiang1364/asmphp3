@@ -64,7 +64,7 @@
                 </div>
 
                 <!-- sanpham -->
-                 
+
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseSanpham" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Sản Phẩm
@@ -77,7 +77,7 @@
                         <a class="nav-link" href="{{route('sanpham.add')}}">Thêm Sản Phẩm</a>
                     </nav>
                 </div>
-                
+
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCupon" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Mã giảm giá
@@ -89,6 +89,17 @@
                         <a class="nav-link" href="{{route('cupon.add')}}">Thêm mã giảm giá</a>
                     </nav>
                 </div>
+
+                <div class="sb-sidenav-menu-heading">Addons</div>
+                <a class="nav-link" href={{ route('users') }}>
+                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                    User
+                </a>
+                <a class="nav-link" href={{ route('orders') }}>
+                    <div class="sb-nav-link-icon"><i class="fa fa-money"></i></div>
+                    Order
+                </a>
+
             </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Logged in as:</div>

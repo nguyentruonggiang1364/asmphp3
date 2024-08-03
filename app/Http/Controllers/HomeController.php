@@ -103,14 +103,13 @@ class HomeController extends Controller
 
                 session()->forget('cart');
                 DB::commit();
-                return redirect()->route('datthanhcong');
+                return redirect()->route('/thanks');
             });
         } catch (\Exception $exception) {
             //throw $th;
-            dd($exception);
         }
     }
-    public function datthanhcong()
+    public function thanks()
     {
         return view('FE/thanhcong');
     }
